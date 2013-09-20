@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>measure-string</title>
+  <style>
+    input {
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <input type='text' autofocus>
+  <script src='build/build.js'></script>
+  <script>
+    var measure = require('measure-string');
+    var el = document.body.children[0];
+    el.style.width = measure(el, '') + 'px';
+
+    el.onkeypress = function(e){
+      var c = String.fromCharCode(e.keyCode);
+      var val = el.value + c;
+      el.style.width = measure(el, val) + 'px';
+    };
+
+    el.onkeyup = function(e){
+      el.style.width = measure(el, el.value) + 'px';
+    };
+  </script>
+</body>
+</html>
