@@ -11,7 +11,9 @@
 
 ## API
 
+### measure(el, str)
 
+Measure the given `str` for width based on the styling of `el`.
 
 ## License
 
